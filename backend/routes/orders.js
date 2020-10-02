@@ -5,7 +5,7 @@ const router = new Router();
 // const { v4: uuidv4 } = require("uuid");
 // const short = require('short-uuid');
 
-const shortid = require('shortid')
+const shortid = require("shortid");
 
 //db
 const { db } = require("../db");
@@ -23,9 +23,9 @@ router.post("/", (req, res) => {
       0
     ),
   };
-  
+  console.log("Yoooo", order);
   let orderss = db.get("orders").push(order).write();
-  console.log('order pushed', orderss)
+  console.log("order pushed", orderss);
   res.send({
     orderNr: order.orderNr,
     msg: "Your order is on the way",
