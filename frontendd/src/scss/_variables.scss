@@ -1,0 +1,10 @@
+$primary-color:#f3e4e1;
+$secondary-color:#0E927D;;
+$thirdly-color:#2F2926;
+
+@mixin easeOut {
+  transition: all 2s ease-out;
+}
+@mixin background {
+  transition: background 2s ease-in-out;
+}
