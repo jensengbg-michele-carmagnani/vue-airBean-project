@@ -27,6 +27,11 @@ export default {
   methods: {
     backToMenu() {
       this.$router.push("/menu");
+      //this.$store.commit('toggleCart');
+      this.$store.commit('emptyCart');
+    },
+    showOrders() {
+      
     },
   },
 };

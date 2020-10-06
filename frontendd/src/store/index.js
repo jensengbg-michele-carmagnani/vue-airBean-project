@@ -11,14 +11,24 @@ export default new Vuex.Store({
     ui: {
       showNav: false,
       showOrders: false,
-      showPorfile: true,
+      showHistory: false,
     },
 
     cart: [],
+    user: {},
     order: Object,
   },
 
   mutations: {
+    userHistory(state, userData) {
+      state.user = {
+        name: userData.name,
+        email: userData.email,
+        history: userData.history,
+        token: userData.token,
+      };
+      console.log("userData in userHistory", userData);
+    },
     showCoffe(state, menu) {
       state.menu = menu;
     },
@@ -28,9 +38,10 @@ export default new Vuex.Store({
     toggleCart(state) {
       state.ui.showOrders = !state.ui.showOrders;
     },
-    toggleProfile(state) {
-      state.ui.showPorfile = !state.ui.showPorfile;
+    toggleHistory(state) {
+      state.ui.showHistory = !state.ui.showHistory;
     },
+
     addItemToCart(state, product) {
       console.log("add product AddItemToCart store", product);
       let index = state.cart.findIndex((item) => item.id === product.id);
@@ -50,6 +61,9 @@ export default new Vuex.Store({
     },
     emptyCart(state) {
       state.cart = [];
+    },
+    emptyUser(state) {
+      state.user = {};
     },
     orderConfirmed(state, order) {
       state.order = order;
@@ -78,18 +92,41 @@ export default new Vuex.Store({
     async sendOrder(ctx) {
       let data = await ax.post(`${ctx.state.url}/orders`, {
         order: ctx.state.cart,
-      
+         //user: JSON.parse(sessionStorage.getItem("airbean")),
       });
       console.log("order from db", ctx.state.cart);
       ctx.commit("orderConfirmed", data.data);
       ctx.commit("emptyCart");
       ctx.commit("toggleCart");
     },
-    async getProfile(ctx, profile) {
-      let data = await ax.get(`${ctx.state.url}/profile`, {
-        profile: { profile },
-      });
-      console.log("profile to check", data);
+    async checkState(ctx) {
+      if (sessionStorage.getItem("airbean") !== null) {
+        ctx.commit(
+          "userHistory",
+          JSON.parse(sessionStorage.getItem("airbean"))
+        );
+      }
+    },
+    async login(ctx, user) {
+      //ctx.commit("toggleFormProfile");
+      try {
+        let data = await ax.post(`${ctx.state.url}/login`, {
+          user,
+        });
+        console.log("data from db ", data); //data from db
+        if (data.data.success) {
+          console.log("data.data success", data.data);
+          ctx.commit("emptyUser");
+          ctx.commit("userHistory", data.data);
+
+          // Set session
+          sessionStorage.setItem("airbean", JSON.stringify(data.data));
+        } else {
+          alert("E-mail or password wrong");
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
     },
   },
 

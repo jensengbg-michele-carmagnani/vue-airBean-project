@@ -1,6 +1,6 @@
 <template>
   <section id="form">
-    <section class="form-profile" >
+    <section class="form-profile" v-if="showProfile">
       <div class="symbol"><h3>A</h3></div>
       <section class="title-profile">
         <h3 class="welcome-profile">Wellcome to AirBean family</h3>
@@ -16,7 +16,7 @@
             id="input-name"
             type="name"
             placeholder="Name"
-            :v-model="profileData.name"
+            v-model="dataProfile.name"
           />
         </div>
         <div class="email">
@@ -25,7 +25,7 @@
             id="input-email"
             type="email"
             placeholder="Email"
-            :v-model="profileData.email"
+            v-model="dataProfile.email"
           />
         </div>
       </section>
@@ -33,32 +33,33 @@
         <input type="radio" id="gdpr" name="gdpr" value="gdpr" />
         <label for="gdpr">GDPR</label><br />
       </div>
-      <button class="btn-brew" @click.prevent=" getProfile">
-        brew me a cup
-      </button>
+      <button class="btn-brew" @click="login">brew me a cup</button>
     </section>
   </section>
 </template>
 
 <script>
 export default {
-  name: "Form",
+  name: "LoginForm",
   data() {
     return {
       showProfile: true,
-      profileData: {
+      dataProfile: {
         name: "",
         email: "",
       },
     };
   },
   methods: {
-    toggleProfile() {
+    toggleFormProfile() {
       this.showProfile = !this.showProfile;
     },
-    getProfile() {
-      console.log('profileData',this.profileData)
-      this.$store.dispatch("getProfile", this.profileData);
+    login() {
+      console.log("profileData", this.dataProfile);
+      this.toggleFormProfile();
+      this.$store.commit('toggleHistory')
+      this.$store.dispatch("login", this.dataProfile);
+      
     },
   },
 };
