@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
   let resObj = {
     success: false,
   };
+  
 
   let user = await getUser(req.body.user);
   console.log("-----user from db-----");
@@ -33,11 +34,12 @@ router.post("/", async (req, res) => {
       const token = jwt.sign({ id: user.id }, "Pokemon", {
         expiresIn: 600,
       });
-      resObj.name = user.name
-      resObj.email = user.email
+      resObj.name = user.name;
+      resObj.email = user.email;
       resObj.history = user.history;
       resObj.success = true;
       resObj.token = token;
+      resObj.id = user.id;
     }
   }
   console.log("resObj", resObj);

@@ -3,7 +3,7 @@
     <div class="darker">
       <article class="menu-wrapper">
         <Nav />
-        <Cart />
+        <Cart/>
         <h2 class="title">MENY</h2>
         <CoffeList v-for="item in coffeMenu" :key="item.id" :coffeItem="item" />
       </article>

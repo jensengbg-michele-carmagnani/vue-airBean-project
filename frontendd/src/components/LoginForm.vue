@@ -1,6 +1,6 @@
 <template>
   <section id="form">
-    <section class="form-profile" v-if="showProfile">
+    <section class="form-profile">
       <div class="symbol"><h3>A</h3></div>
       <section class="title-profile">
         <h3 class="welcome-profile">Wellcome to AirBean family</h3>
@@ -50,6 +50,11 @@ export default {
       },
     };
   },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
   methods: {
     toggleFormProfile() {
       this.showProfile = !this.showProfile;
@@ -57,9 +62,8 @@ export default {
     login() {
       console.log("profileData", this.dataProfile);
       this.toggleFormProfile();
-      this.$store.commit('toggleHistory')
+      this.$store.commit("toggleHistory");
       this.$store.dispatch("login", this.dataProfile);
-      
     },
   },
 };

@@ -20,14 +20,8 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    userHistory(state, userData) {
-      state.user = {
-        name: userData.name,
-        email: userData.email,
-        history: userData.history,
-        token: userData.token,
-      };
-      console.log("userData in userHistory", userData);
+    setUser(state, user) {
+      state.user = user;
     },
     showCoffe(state, menu) {
       state.menu = menu;
@@ -68,6 +62,7 @@ export default new Vuex.Store({
     orderConfirmed(state, order) {
       state.order = order;
     },
+
     addToCart(state, product) {
       // check if the prod exists in cart - what index
       let index = state.cart.findIndex((item) => item.id === product.id);
@@ -92,8 +87,9 @@ export default new Vuex.Store({
     async sendOrder(ctx) {
       let data = await ax.post(`${ctx.state.url}/orders`, {
         order: ctx.state.cart,
-         //user: JSON.parse(sessionStorage.getItem("airbean")),
+        user: JSON.parse(sessionStorage.getItem("airbean")),
       });
+
       console.log("order from db", ctx.state.cart);
       ctx.commit("orderConfirmed", data.data);
       ctx.commit("emptyCart");
@@ -101,10 +97,7 @@ export default new Vuex.Store({
     },
     async checkState(ctx) {
       if (sessionStorage.getItem("airbean") !== null) {
-        ctx.commit(
-          "userHistory",
-          JSON.parse(sessionStorage.getItem("airbean"))
-        );
+        ctx.commit("setUser", JSON.parse(sessionStorage.getItem("airbean")));
       }
     },
     async login(ctx, user) {
@@ -114,19 +107,27 @@ export default new Vuex.Store({
           user,
         });
         console.log("data from db ", data); //data from db
+
         if (data.data.success) {
           console.log("data.data success", data.data);
           ctx.commit("emptyUser");
-          ctx.commit("userHistory", data.data);
-
-          // Set session
+          ctx.commit("setUser", data.data);
+            // Set session
           sessionStorage.setItem("airbean", JSON.stringify(data.data));
+          
         } else {
           alert("E-mail or password wrong");
         }
       } catch (error) {
         console.log("error", error);
       }
+    },
+    async myHistory(ctx) {
+      let user = JSON.parse(sessionStorage.getItem("airbean"));
+      console.log(user);
+      let data = await ax.get(`${ctx.state.url}/me/${user.id}`);
+      console.log(data);
+      ctx.commit("setUser", data.data);
     },
   },
 
