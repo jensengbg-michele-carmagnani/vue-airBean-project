@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./components";
 
 body {
   margin: 0;
@@ -331,15 +332,22 @@ body {
             line-height: 120%;
           }
         }
-        .title-history {
-          margin-top: 4rem;
-          margin-bottom: 1.2rem;
-          font-family: PT Serif;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 22px;
-          line-height: 120%;
-          color: #ffffff;
+        .history {
+          width: auto;
+          height: 50%;
+          overflow: auto;
+          .title-history {
+            margin-top: 4rem;
+            margin-bottom: 1.2rem;
+            font-family: PT Serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 120%;
+            color: #ffffff;
+            height: 500px;
+            
+          }
         }
         #history-profile:last-child {
           border-bottom: 1px solid rgba(255, 255, 255, 0.6);
@@ -364,7 +372,7 @@ body {
             padding: 6px;
             margin: 0;
           }
-          .total {
+          .partial {
             height: 10px;
             padding: 6px;
             margin: 0;
@@ -451,120 +459,122 @@ body {
           }
         }
 
-        #form {
-          .form-profile {
-            width: 90%;
-            margin: 0 auto;
-            background-color: $primary-color;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            .symbol {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 2rem;
-              height: 2rem;
-              border-radius: 999rem;
-              background-color: rgba($color: #3f3e3e, $alpha: 0.2);
-              margin-top: 3rem;
-            }
-            .title-profile {
-              padding-bottom: 2.2rem;
-              .welcome-profile {
-                margin: 0;
-                font-family: PT Serif;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 32px;
-                line-height: 120%;
-              }
-              .info-profile {
-                font-family: Work Sans;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 150%;
-                text-align: center;
-              }
-            }
-            .form {
-              width: 100%;
-              .name {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                margin-bottom: 1.5rem;
-                #label-name {
-                  width: 85%;
-                  align-self: flex-start;
-                  margin-left: 7%;
-                  font-family: Work Sans;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 12px;
-                  line-height: 120%;
-                  margin-bottom: 0.5rem;
-                }
-
-                #input-name {
-                  width: 85%;
-                  height: 35px;
-                  border-color: #2f2926;
-                  border-radius: 5px;
-                }
-              }
-              .email {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                #label-email {
-                  width: 85%;
-                  align-self: flex-start;
-                  margin-left: 7%;
-                  font-family: Work Sans;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 12px;
-                  line-height: 120%;
-                  margin-bottom: 0.5rem;
-                }
-                #input-email {
-                  width: 85%;
-                  height: 35px;
-                  border-color: #2f2926;
-                  border-radius: 5px;
-                }
-              }
-            }
-            .gdpr {
-              width: 90%;
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              margin-top: 1rem;
-            }
-
-            .btn-brew {
-              margin: 5rem 0 5rem 0;
-              width: 248px;
-              height: 55px;
-              background: #2f2926;
-              border-radius: 50px;
-              color: #ffffff;
-              font-family: PT Serif;
-              font-style: normal;
-              font-weight: bold;
-              font-size: 24px;
-              line-height: 120%;
-              text-align: center;
-            }
-          }
-        }
+        //
       }
     }
+    // #form {
+    //   .form-profile {
+    //     width: 90%;
+    //     margin: 0 auto;
+    //     background-color: $primary-color;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-direction: column;
+    //     color: #fff;
+    //     .symbol {
+    //       display: flex;
+    //       align-items: center;
+    //       justify-content: center;
+    //       width: 2rem;
+    //       height: 2rem;
+    //       border-radius: 999rem;
+    //       background-color: rgba($color: #3f3e3e, $alpha: 0.2);
+    //       margin-top: 3rem;
+    //     }
+    //     .title-profile {
+    //       padding-bottom: 2.2rem;
+    //       .welcome-profile {
+    //         margin: 0;
+    //         font-family: PT Serif;
+    //         font-style: normal;
+    //         font-weight: bold;
+    //         font-size: 32px;
+    //         line-height: 120%;
+    //       }
+    //       .info-profile {
+    //         font-family: Work Sans;
+    //         font-style: normal;
+    //         font-weight: normal;
+    //         font-size: 16px;
+    //         line-height: 150%;
+    //         text-align: center;
+    //       }
+    //     }
+    //     .form {
+    //       width: 100%;
+    //       .name {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         flex-direction: column;
+    //         margin-bottom: 1.5rem;
+    //         #label-name {
+    //           width: 85%;
+    //           align-self: flex-start;
+    //           margin-left: 7%;
+    //           font-family: Work Sans;
+    //           font-style: normal;
+    //           font-weight: normal;
+    //           font-size: 12px;
+    //           line-height: 120%;
+    //           margin-bottom: 0.5rem;
+    //         }
+
+    //         #input-name {
+    //           width: 85%;
+    //           height: 35px;
+    //           border-color: #2f2926;
+    //           border-radius: 5px;
+    //         }
+    //       }
+    //       .email {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         flex-direction: column;
+    //         #label-email {
+    //           width: 85%;
+    //           align-self: flex-start;
+    //           margin-left: 7%;
+    //           font-family: Work Sans;
+    //           font-style: normal;
+    //           font-weight: normal;
+    //           font-size: 12px;
+    //           line-height: 120%;
+    //           margin-bottom: 0.5rem;
+    //         }
+    //         #input-email {
+    //           width: 85%;
+    //           height: 35px;
+    //           border-color: #2f2926;
+    //           border-radius: 5px;
+    //         }
+    //       }
+    //     }
+    //     .gdpr {
+    //       width: 90%;
+    //       display: flex;
+    //       justify-content: flex-start;
+    //       align-items: center;
+    //       margin-top: 1rem;
+    //     }
+
+    //     .btn-brew {
+    //       margin: 5rem 0 5rem 0;
+    //       width: 248px;
+    //       height: 55px;
+    //       background: #2f2926;
+    //       border-radius: 50px;
+    //       color: #ffffff;
+    //       font-family: PT Serif;
+    //       font-style: normal;
+    //       font-weight: bold;
+    //       font-size: 24px;
+    //       line-height: 120%;
+    //       text-align: center;
+    //     }
+    //   }
+    // }
   }
 }

@@ -21,7 +21,6 @@ router.post("/", async (req, res) => {
   let resObj = {
     success: false,
   };
-  
 
   let user = await getUser(req.body.user);
   console.log("-----user from db-----");
@@ -37,6 +36,10 @@ router.post("/", async (req, res) => {
       resObj.name = user.name;
       resObj.email = user.email;
       resObj.history = user.history;
+      resObj.totalSommarize = user.history.reduce(
+        (acc, item) => acc + item.totalOrderValue,
+        0
+      );
       resObj.success = true;
       resObj.token = token;
       resObj.id = user.id;

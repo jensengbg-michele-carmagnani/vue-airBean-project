@@ -7,6 +7,7 @@
 export default {
   name: "app",
   computed: {},
+
   beforeMount() {
     this.$store.dispatch("fetchCoffe");
     this.$store.dispatch("checkState");

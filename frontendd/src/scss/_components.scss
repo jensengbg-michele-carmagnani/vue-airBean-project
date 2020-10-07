@@ -1,0 +1,245 @@
+#form {
+  .form-profile {
+    width: 90%;
+    margin: 0 auto;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    .symbol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999rem;
+      background-color: rgba($color: #3f3e3e, $alpha: 0.2);
+      margin-top: 3rem;
+    }
+    .title-profile {
+      padding-bottom: 2.2rem;
+      .welcome-profile {
+        margin: 0;
+        font-family: PT Serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 120%;
+      }
+      .info-profile {
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+      }
+    }
+    .form {
+      width: 100%;
+      .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        #label-name {
+          width: 85%;
+          align-self: flex-start;
+          margin-left: 7%;
+          font-family: Work Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 120%;
+          margin-bottom: 0.5rem;
+        }
+
+        #input-name {
+          width: 85%;
+          height: 35px;
+          border-color: #2f2926;
+          border-radius: 5px;
+        }
+      }
+      .email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        #label-email {
+          width: 85%;
+          align-self: flex-start;
+          margin-left: 7%;
+          font-family: Work Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 120%;
+          margin-bottom: 0.5rem;
+        }
+        #input-email {
+          width: 85%;
+          height: 35px;
+          border-color: #2f2926;
+          border-radius: 5px;
+        }
+      }
+    }
+    .gdpr {
+      width: 90%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .btn-brew {
+      margin: 5rem 0 5rem 0;
+      width: 248px;
+      height: 55px;
+      background: #2f2926;
+      border-radius: 50px;
+      color: #ffffff;
+      font-family: PT Serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 120%;
+      text-align: center;
+    }
+  }
+}
+#cart {
+  position: relative;
+
+  #orders {
+    position: absolute;
+    background-color: black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999rem;
+    top: -78px;
+    left: 300px;
+    #bag {
+      position: absolute;
+      top: -4px;
+      left: -23px;
+    }
+    #items {
+      position: absolute;
+      z-index: 100;
+      left: 35px;
+      top: 0px;
+      height: 1.2rem;
+      width: 1.2rem;
+      color: white;
+      background: #e5674e;
+      border-radius: 999rem;
+      text-align: center;
+    }
+  }
+}
+#coffeList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .coffe-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    .coffe-add {
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      margin: 0;
+      margin-right: 1.2rem;
+      border-radius: 999rem;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coffe-title {
+      font-weight: 800;
+    }
+    .coffe-dots {
+      flex: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      margin: 1rem 1rem 0 0;
+    }
+  }
+}
+.coffe-description {
+  font-weight: 600;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+  .coffeItem-description {
+    margin: 0 3rem 0 0;
+  }
+}
+#orderList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: -300px;
+  background: aliceblue;
+  padding: 1.2rem;
+  border-radius: 5px;
+
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .coffe-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .item-dots {
+      flex: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      margin: 1rem 1rem 0 0;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  #btn-buy {
+    width: 248px;
+    height: 55px;
+    background: #2f2926;
+    border-radius: 50px;
+    color: #ffffff;
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .total-price {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 2rem;
+    .price {
+      display: flex;
+      width: 100%;
+      .item-dots {
+        flex: 1;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin: 1rem 1rem 0 0;
+      }
+    }
+  }
+}

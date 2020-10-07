@@ -112,6 +112,7 @@ export default new Vuex.Store({
           console.log("data.data success", data.data);
           ctx.commit("emptyUser");
           ctx.commit("setUser", data.data);
+          console.log('setUser',data.data)
             // Set session
           sessionStorage.setItem("airbean", JSON.stringify(data.data));
           

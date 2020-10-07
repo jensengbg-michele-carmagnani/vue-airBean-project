@@ -1,9 +1,8 @@
 <template>
   <section id="profile">
-    <Nav />
-    <LoginForm v-if="!user.email" />
+    <LoginForm v-if="!user.name" />
 
-    <section class="profile-wrapper" v-if="user.email">
+    <section class="profile-wrapper" v-if="user.name">
       <article id="info-profile">
         <div class="img-profile">
           <img src="./../assets/imgHead.png" alt="" />
@@ -12,33 +11,34 @@
         <h2 class="name">{{ user.name }}</h2>
         <p class="email">{{ user.email }}</p>
       </article>
+
       <h2 class="title-history">Order history</h2>
-      <article
-        id="history-profile"
-        v-for="(item, index) in user.history"
-        :key="index"
-      >
-        <p class="order-nr"> #{{ item.orderNr }}</p>
-        <p class="order-date">{{ item.timeStamp }}</p>
-        <p class="total">Partial </p>
-        <p class="total-amount"> {{ item.totalOrderValue }}kr</p>
-      </article>
+      <section class="history">
+        <article
+          id="history-profile"
+          v-for="(item, index) in user.history"
+          :key="index"
+        >
+          <p class="order-nr">#{{ item.orderNr }}</p>
+          <p class="order-date">{{ item.timeStamp }}</p>
+          <p class="partial">Partial</p>
+          <p class="total-amount">{{ item.totalOrderValue }}kr</p>
+        </article>
+      </section>
       <article class="total">
         <p>Total</p>
-        <p>34342kr</p>
+        <p>{{user.totalSommarize}}Kr</p>
       </article>
     </section>
   </section>
 </template>
 
 <script>
-import Nav from "@/components/Nav";
 import LoginForm from "@/components/LoginForm";
 export default {
   name: "Profile",
   components: {
     LoginForm,
-    Nav,
   },
   data() {
     return {};
