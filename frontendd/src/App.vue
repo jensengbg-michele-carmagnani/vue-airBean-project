@@ -10,10 +10,10 @@ export default {
   beforeMount() {
     this.$store.dispatch("fetchCoffe");
     this.$store.dispatch("checkState");
-    
-    setTimeout(() => {
-      this.$router.push("/menu");
-    }, 1000);
+
+    // setTimeout(() => {
+    //   this.$router.push("/menu");
+    // }, 1000);
   },
 };
 </script>

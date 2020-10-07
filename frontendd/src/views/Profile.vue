@@ -5,21 +5,27 @@
 
     <section class="profile-wrapper" v-if="user.email">
       <article id="info-profile">
-        <figure>
-          <img src="@/assets/profileImg.png" alt="" />
-        </figure>
-        <h2 class="name">name…{{ user.name }}</h2>
-        <p class="email">email…{{ user.email }}</p>
+        <div class="img-profile">
+          <img src="./../assets/imgHead.png" alt="" />
+          <img src="./../assets/imgBody.png" alt="" />
+        </div>
+        <h2 class="name">{{ user.name }}</h2>
+        <p class="email">{{ user.email }}</p>
       </article>
-      <h2>Order history</h2>
+      <h2 class="title-history">Order history</h2>
       <article
         id="history-profile"
         v-for="(item, index) in user.history"
         :key="index"
       >
-        <p class="order-nr">Order: {{ item.orderNr }}</p>
-        <p class="order-date">Data:{{ item.date }}</p>
-        <p class="order-nr">total amount: {{ user.total }}</p>
+        <p class="order-nr"> #{{ item.orderNr }}</p>
+        <p class="order-date">{{ item.timeStamp }}</p>
+        <p class="total">Partial </p>
+        <p class="total-amount"> {{ item.totalOrderValue }}kr</p>
+      </article>
+      <article class="total">
+        <p>Total</p>
+        <p>34342kr</p>
       </article>
     </section>
   </section>
@@ -49,4 +55,13 @@ export default {
 </script>
 
 <style lang="scss">
+.img-profile {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 4rem;
+  height: 4rem;
+  background: white;
+}
 </style>
