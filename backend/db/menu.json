@@ -184,6 +184,20 @@
             }
           ],
           "totalOrderValue": 78
+        },
+        {
+          "orderNr": "CV9p9fv7X",
+          "timeStamp": "2020-10-07",
+          "items": [
+            {
+              "id": 1,
+              "title": "Bryggkaffe",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 39,
+              "quantity": 3
+            }
+          ],
+          "totalOrderValue": 117
         }
       ]
     },

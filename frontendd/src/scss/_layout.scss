@@ -304,6 +304,72 @@ body {
       background-color: $thirdly-color;
       color: #2f2926;
       margin: auto;
+      .btn-wrapper {
+        position: relative;
+
+        #menu {
+          position: absolute;
+          top: 50px;
+          left: -200px;
+          width: 400px;
+          height: 600px;
+          background: rgba($color: black, $alpha: 0.9);
+          color: white;
+          transition: background 1s ease-in-out;
+        }
+        #menu-btn {
+          position: absolute;
+          top: 0px;
+          left: -180px;
+          z-index: 10;
+          width: 3rem;
+          height: 3rem;
+          background: rgba(255, 255, 255, 0.897);
+          border-radius: 999rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          cursor: pointer;
+          @include easeOut;
+          .btn-line {
+            height: 2px;
+            width: 30px;
+            margin: 0 0 5px 0;
+            background: #000;
+            border-radius: 25%;
+          }
+
+          :nth-child(3).btn-line {
+            height: 2px;
+            width: 30px;
+            margin: 0 0 0 0;
+            background: #000;
+            border-radius: 25%;
+          }
+          // Rotate Into X with Menu line
+          &.close {
+            transform: rotate(180deg);
+            .btn-line {
+              // line 1 Rotate
+              &:nth-child(1) {
+                transform: rotate(45deg) translate(4.6px, 5px);
+                background-color: black;
+              }
+              // line 2 Hide
+              &:nth-child(2) {
+                opacity: 0;
+              }
+
+              // line 3 Rotate
+              &:nth-child(3) {
+                transform: rotate(-45deg) translate(5.5px, -6px);
+                background-color: black;
+              }
+            }
+          }
+        }
+      }
       .profile-wrapper {
         height: 75%;
         width: 80%;
@@ -314,6 +380,7 @@ body {
           align-items: center;
           justify-content: center;
           flex-direction: column;
+
           .img-profile {
             margin-bottom: 2rem;
           }
@@ -332,56 +399,54 @@ body {
             line-height: 120%;
           }
         }
+        .title-history {
+          margin-top: 4rem;
+          margin-bottom: 1.2rem;
+          font-family: PT Serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 120%;
+          color: #ffffff;
+        }
         .history {
           width: auto;
           height: 50%;
           overflow: auto;
-          .title-history {
-            margin-top: 4rem;
-            margin-bottom: 1.2rem;
-            font-family: PT Serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 22px;
-            line-height: 120%;
-            color: #ffffff;
-            height: 500px;
-            
+          .history-profile:last-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
           }
-        }
-        #history-profile:last-child {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        #history-profile {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          color: rgba(255, 255, 255, 0.5);
+          .history-profile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            color: rgba(255, 255, 255, 0.5);
 
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          padding-bottom: 0.7rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.7rem;
 
-          .order-nr {
-            height: 10px;
-            padding: 6px;
-            margin: 0;
-            color: #fff;
-          }
-          .order-date {
-            text-align: end;
-            height: 10px;
-            padding: 6px;
-            margin: 0;
-          }
-          .partial {
-            height: 10px;
-            padding: 6px;
-            margin: 0;
-          }
-          .total-amount {
-            text-align: end;
-            height: 10px;
-            padding: 6px;
-            margin: 0;
+            .order-nr {
+              height: 10px;
+              padding: 6px;
+              margin: 0;
+              color: #fff;
+            }
+            .order-date {
+              text-align: end;
+              height: 10px;
+              padding: 6px;
+              margin: 0;
+            }
+            .partial {
+              height: 10px;
+              padding: 6px;
+              margin: 0;
+            }
+            .total-amount {
+              text-align: end;
+              height: 10px;
+              padding: 6px;
+              margin: 0;
+            }
           }
         }
         .total {
@@ -458,123 +523,7 @@ body {
             }
           }
         }
-
-        //
       }
     }
-    // #form {
-    //   .form-profile {
-    //     width: 90%;
-    //     margin: 0 auto;
-    //     background-color: $primary-color;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     flex-direction: column;
-    //     color: #fff;
-    //     .symbol {
-    //       display: flex;
-    //       align-items: center;
-    //       justify-content: center;
-    //       width: 2rem;
-    //       height: 2rem;
-    //       border-radius: 999rem;
-    //       background-color: rgba($color: #3f3e3e, $alpha: 0.2);
-    //       margin-top: 3rem;
-    //     }
-    //     .title-profile {
-    //       padding-bottom: 2.2rem;
-    //       .welcome-profile {
-    //         margin: 0;
-    //         font-family: PT Serif;
-    //         font-style: normal;
-    //         font-weight: bold;
-    //         font-size: 32px;
-    //         line-height: 120%;
-    //       }
-    //       .info-profile {
-    //         font-family: Work Sans;
-    //         font-style: normal;
-    //         font-weight: normal;
-    //         font-size: 16px;
-    //         line-height: 150%;
-    //         text-align: center;
-    //       }
-    //     }
-    //     .form {
-    //       width: 100%;
-    //       .name {
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //         flex-direction: column;
-    //         margin-bottom: 1.5rem;
-    //         #label-name {
-    //           width: 85%;
-    //           align-self: flex-start;
-    //           margin-left: 7%;
-    //           font-family: Work Sans;
-    //           font-style: normal;
-    //           font-weight: normal;
-    //           font-size: 12px;
-    //           line-height: 120%;
-    //           margin-bottom: 0.5rem;
-    //         }
-
-    //         #input-name {
-    //           width: 85%;
-    //           height: 35px;
-    //           border-color: #2f2926;
-    //           border-radius: 5px;
-    //         }
-    //       }
-    //       .email {
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //         flex-direction: column;
-    //         #label-email {
-    //           width: 85%;
-    //           align-self: flex-start;
-    //           margin-left: 7%;
-    //           font-family: Work Sans;
-    //           font-style: normal;
-    //           font-weight: normal;
-    //           font-size: 12px;
-    //           line-height: 120%;
-    //           margin-bottom: 0.5rem;
-    //         }
-    //         #input-email {
-    //           width: 85%;
-    //           height: 35px;
-    //           border-color: #2f2926;
-    //           border-radius: 5px;
-    //         }
-    //       }
-    //     }
-    //     .gdpr {
-    //       width: 90%;
-    //       display: flex;
-    //       justify-content: flex-start;
-    //       align-items: center;
-    //       margin-top: 1rem;
-    //     }
-
-    //     .btn-brew {
-    //       margin: 5rem 0 5rem 0;
-    //       width: 248px;
-    //       height: 55px;
-    //       background: #2f2926;
-    //       border-radius: 50px;
-    //       color: #ffffff;
-    //       font-family: PT Serif;
-    //       font-style: normal;
-    //       font-weight: bold;
-    //       font-size: 24px;
-    //       line-height: 120%;
-    //       text-align: center;
-    //     }
-    //   }
-    // }
   }
 }

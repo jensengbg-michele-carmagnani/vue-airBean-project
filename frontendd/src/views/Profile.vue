@@ -1,5 +1,6 @@
 <template>
   <section id="profile">
+    <Nav />
     <LoginForm v-if="!user.name" />
 
     <section class="profile-wrapper" v-if="user.name">
@@ -15,7 +16,7 @@
       <h2 class="title-history">Order history</h2>
       <section class="history">
         <article
-          id="history-profile"
+          class="history-profile"
           v-for="(item, index) in user.history"
           :key="index"
         >
@@ -27,18 +28,20 @@
       </section>
       <article class="total">
         <p>Total</p>
-        <p>{{user.totalSommarize}}Kr</p>
+        <p>{{ user.totalSommarize }}Kr</p>
       </article>
     </section>
   </section>
 </template>
 
 <script>
+import Nav from "@/components/Nav";
 import LoginForm from "@/components/LoginForm";
 export default {
   name: "Profile",
   components: {
     LoginForm,
+    Nav,
   },
   data() {
     return {};
