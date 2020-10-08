@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #fff;
+    color: #3f3e3e;
     .symbol {
       display: flex;
       align-items: center;
@@ -89,6 +89,13 @@
       }
     }
     .gdpr {
+      width: 90%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .new-user{
       width: 90%;
       display: flex;
       justify-content: flex-start;

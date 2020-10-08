@@ -10,6 +10,7 @@
       <h2 @click="goToKaffe">Vårt kaffe</h2>
       <h2 @click="goToProfil">Min profil</h2>
       <h2 @click="goToOrder">Orderstatus</h2>
+      <h2 @click="goToLending">LogOut</h2>
     </article>
   </section>
 </template>
@@ -36,6 +37,12 @@ export default {
     },
     goToOrder() {
       this.$router.push("/status");
+      this.toggleNav();
+    },
+    goToLending() {
+      sessionStorage.removeItem("airbean");
+      this.$store.commit("resetUser");
+      this.$router.push("/");
       this.toggleNav();
     },
   },

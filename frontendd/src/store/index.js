@@ -20,7 +20,11 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    resetUser(state) {
+      state.user = {};
+    },
     setUser(state, user) {
+     // Vue.set(user, "name",user.name );
       state.user = user;
     },
     showCoffe(state, menu) {
@@ -112,10 +116,9 @@ export default new Vuex.Store({
           console.log("data.data success", data.data);
           ctx.commit("emptyUser");
           ctx.commit("setUser", data.data);
-          console.log('setUser',data.data)
-            // Set session
+          console.log("setUser", data.data);
+          // Set session
           sessionStorage.setItem("airbean", JSON.stringify(data.data));
-          
         } else {
           alert("E-mail or password wrong");
         }
@@ -125,9 +128,16 @@ export default new Vuex.Store({
     },
     async myHistory(ctx) {
       let user = JSON.parse(sessionStorage.getItem("airbean"));
-      console.log(user);
+      console.log("User in myHistory sessionStorage", user);
       let data = await ax.get(`${ctx.state.url}/me/${user.id}`);
       console.log(data);
+      ctx.commit("setUser", data.data);
+    },
+    async newUser(ctx, newUser) {
+      let data = await ax.post(`${ctx.state.url}/newuser`, { newUser });
+      console.log("newUser", data.data);
+      ctx.commit("emptyUser");
+      sessionStorage.setItem("airbean", JSON.stringify(data.data));
       ctx.commit("setUser", data.data);
     },
   },

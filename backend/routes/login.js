@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
   console.log("-----user from db-----");
   console.log(user);
 
-  if (typeof user === undefined) {
+  if (!user) {
     resObj.success = false;
   } else {
     if (user) {

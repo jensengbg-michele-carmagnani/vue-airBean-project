@@ -30,10 +30,19 @@
         </div>
       </section>
       <div class="gdpr">
-        <input type="radio" id="gdpr" name="gdpr" value="gdpr" />
+        <input type="radio" id="gdpr" name="gdpr" v-model="gdpr" />
         <label for="gdpr">GDPR</label><br />
       </div>
-      <button class="btn-brew" @click="login">brew me a cup</button>
+      <div class="new-user">
+        <input type="checkbox" id="checkbox" v-model="checked" />
+        <label for="checkbox">NEW USER</label><br />
+      </div>
+      <button class="btn-brew" v-if="!checked" @click="login">
+        brew me a cup
+      </button>
+      <button class="btn-brew" v-else-if="checked" @click="newUser">
+        New user
+      </button>
     </section>
   </section>
 </template>
@@ -48,6 +57,8 @@ export default {
         name: "",
         email: "",
       },
+      checked: false,
+      gdpr: false
     };
   },
   computed: {
@@ -64,6 +75,9 @@ export default {
       this.toggleFormProfile();
       this.$store.commit("toggleHistory");
       this.$store.dispatch("login", this.dataProfile);
+    },
+    newUser() {
+      this.$store.dispatch('newUser', this.dataProfile)
     },
   },
 };

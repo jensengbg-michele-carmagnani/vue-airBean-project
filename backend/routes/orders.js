@@ -1,7 +1,7 @@
 // Router
 const { Router } = require("express");
 const router = new Router();
-const { v4: uuidv4 } = require("uuid");
+
 const shortid = require("shortid");
 
 //db
@@ -26,9 +26,7 @@ router.post("/", (req, res) => {
     let order = {
       orderNr: shortid(), // Generate uuid,
       timeStamp: createData(),
-      
       items: req.body.order,
-
       totalOrderValue: req.body.order.reduce(
         (acc, item) => acc + item.quantity * item.price,
         0
@@ -45,7 +43,6 @@ router.post("/", (req, res) => {
   } else {
     // user logged in
     let user = getUser(req.body.user);
-
     let order = {
       orderNr: shortid(), // Generate uuid,
       timeStamp: createData(),
@@ -57,11 +54,8 @@ router.post("/", (req, res) => {
     };
 
     console.log("user Order", order);
-
     let usr = db.get("users").find({ name: user.name }).value();
-
     usr.history.push(order);
-
     db.get("users").find({ name: user.name }).assign(usr).write();
 
     res.send({

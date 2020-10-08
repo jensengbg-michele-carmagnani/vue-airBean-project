@@ -51,143 +51,126 @@
         }
       ],
       "totalOrderValue": 78
+    },
+    {
+      "orderNr": "k7RkJBgo5",
+      "timeStamp": "2020-10-08",
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
+    },
+    {
+      "orderNr": "TK7WEfNJd",
+      "timeStamp": "2020-10-08",
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
+    },
+    {
+      "orderNr": "m6pPVCtds",
+      "timeStamp": "2020-10-08",
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "michele",
       "email": "michele@gmail.com",
       "history": [
         {
-          "orderNr": "mdoCPTs-q",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 1,
-              "title": "Bryggkaffe",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 39,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 78
-        },
-        {
-          "orderNr": "tGZ3BQfo5",
-          "timeStamp": "2020-10-07",
+          "orderNr": "cuKuoofa0",
+          "timeStamp": "2020-10-08",
           "items": [
             {
               "id": 2,
               "title": "Caffè Doppio",
               "desc": "Bryggd på månadens bönor.",
               "price": 49,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 98
-        },
-        {
-          "orderNr": "pY1FVfFVu",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 2,
-              "title": "Caffè Doppio",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 49,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 98
-        },
-        {
-          "orderNr": "2qXdOC0iY",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 1,
-              "title": "Bryggkaffe",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 39,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 78
-        },
-        {
-          "orderNr": "e62hNIdkv",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 6,
-              "title": "Cortado",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 39,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 78
-        },
-        {
-          "orderNr": "hNp0BUmM8",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 5,
-              "title": "Kaffe Latte",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 54,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 108
-        },
-        {
-          "orderNr": "Bd_Fu33Ht",
-          "timeStamp": "2020-10-07",
-          "items": [
+              "quantity": 1
+            },
             {
               "id": 3,
               "title": "Cappuccino",
               "desc": "Bryggd på månadens bönor.",
               "price": 49,
+              "quantity": 1
+            },
+            {
+              "id": 5,
+              "title": "Kaffe Latte",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 54,
+              "quantity": 1
+            }
+          ],
+          "totalOrderValue": 152
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "alessandro",
+      "email": "alessandro@gmail.com",
+      "history": []
+    },
+    {
+      "id": "62ba17e9-18b8-42fb-b536-e6625082484b",
+      "name": "francesca",
+      "email": "francesca@gmail.com",
+      "history": []
+    },
+    {
+      "id": "bf24156a-370c-4ca0-827a-802132751e9c",
+      "name": "marco",
+      "email": "marco@gmail.com",
+      "history": []
+    },
+    {
+      "id": "32ef31c0-5ee6-4210-b836-0a7f05e51559",
+      "name": "anderss",
+      "email": "anderss@gmail.com",
+      "history": [
+        {
+          "orderNr": "IfMBR6Yyr",
+          "timeStamp": "2020-10-08",
+          "items": [
+            {
+              "id": 2,
+              "title": "Caffè Doppio",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 49,
               "quantity": 2
             }
           ],
           "totalOrderValue": 98
         },
         {
-          "orderNr": "AKP9MhcEZ",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 1,
-              "title": "Bryggkaffe",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 39,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 78
-        },
-        {
-          "orderNr": "tj_pihC17",
-          "timeStamp": "2020-10-07",
-          "items": [
-            {
-              "id": 1,
-              "title": "Bryggkaffe",
-              "desc": "Bryggd på månadens bönor.",
-              "price": 39,
-              "quantity": 2
-            }
-          ],
-          "totalOrderValue": 78
-        },
-        {
-          "orderNr": "CV9p9fv7X",
-          "timeStamp": "2020-10-07",
+          "orderNr": "TEJ6rO1YL",
+          "timeStamp": "2020-10-08",
           "items": [
             {
               "id": 1,
@@ -198,13 +181,53 @@
             }
           ],
           "totalOrderValue": 117
+        },
+        {
+          "orderNr": "YxXxORcvT",
+          "timeStamp": "2020-10-08",
+          "items": [
+            {
+              "id": 1,
+              "title": "Bryggkaffe",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 39,
+              "quantity": 2
+            }
+          ],
+          "totalOrderValue": 78
+        },
+        {
+          "orderNr": "OZUOBgp4P",
+          "timeStamp": "2020-10-08",
+          "items": [
+            {
+              "id": 1,
+              "title": "Bryggkaffe",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 39,
+              "quantity": 2
+            }
+          ],
+          "totalOrderValue": 78
         }
       ]
     },
     {
-      "id": 2,
-      "name": "alessandro",
-      "email": "alessandro@gmail.com",
+      "id": "7bf6719c-2ea5-4538-b029-55d32366dd02",
+      "name": "sixten",
+      "email": "sixeten@gmail.com",
+      "history": []
+    },
+    {
+      "id": "531cdcca-0668-4681-9136-7370e4b2ded4",
+      "name": "made",
+      "email": "made@gmail.com",
+      "history": []
+    },
+    {
+      "id": "a59e1227-55dd-447c-9a20-7b4349b38f27",
+      "name": "marcello",
+      "email": "marcello@gmail.com",
       "history": []
     }
   ]

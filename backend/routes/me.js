@@ -7,9 +7,10 @@ const { db } = require("../db");
 
 // Routes
 router.get("/:id", (req, res) => {
-  let id = parseInt(req.params.id);
+  let id = req.params.id;
+  console.log('id params in /me:' , id)
   let user = db.get("users").find({ id: id }).value();
-  console.log("user", user);
+  console.log("user in /me:", user);
   res.send(user);
 });
 

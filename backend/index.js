@@ -10,6 +10,7 @@ const menuRoute = require("./routes/menu");
 const ordersRoute = require("./routes/orders");
 const loginRoute = require("./routes/login");
 const meRoute = require("./routes/me");
+const newUserRoute = require("./routes/newuser");
 
 // products
 app.use("/menu", menuRoute);
@@ -22,6 +23,9 @@ app.use("/login", loginRoute);
 
 // me
 app.use("/me", meRoute);
+
+// newUser
+app.use("/newuser", newUserRoute);
 
 // server port
 const PORT = 5000;
