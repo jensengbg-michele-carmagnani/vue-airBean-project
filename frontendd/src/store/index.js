@@ -24,7 +24,7 @@ export default new Vuex.Store({
       state.user = {};
     },
     setUser(state, user) {
-     // Vue.set(user, "name",user.name );
+      // Vue.set(user, "name",user.name );
       state.user = user;
     },
     showCoffe(state, menu) {
@@ -136,9 +136,13 @@ export default new Vuex.Store({
     async newUser(ctx, newUser) {
       let data = await ax.post(`${ctx.state.url}/newuser`, { newUser });
       console.log("newUser", data.data);
-      ctx.commit("emptyUser");
-      sessionStorage.setItem("airbean", JSON.stringify(data.data));
-      ctx.commit("setUser", data.data);
+      if (!data.data.msg) {
+        ctx.commit("emptyUser");
+        sessionStorage.setItem("airbean", JSON.stringify(data.data));
+        ctx.commit("setUser", data.data);
+      } else {
+        alert(data.data.msg);
+      }
     },
   },
 
