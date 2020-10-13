@@ -8,9 +8,13 @@ const { db } = require("../db");
 // Routes
 router.get("/:id", (req, res) => {
   let id = req.params.id;
-  console.log('id params in /me:' , id)
+  let total = 0;
+
+  console.log("id params in /me:", id);
   let user = db.get("users").find({ id: id }).value();
-  console.log("user in /me:", user);
+  total = user.history.reduce((acc, item) => acc + item.totalOrderValue, 0);
+  user.totalSommarize = total;
+
   res.send(user);
 });
 

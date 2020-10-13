@@ -1,8 +1,8 @@
 <template>
   <section id="about">
+    <Nav />
+    <h2 class="title">Vårt Kaffe</h2>
     <section class="aboutText">
-      <Nav />
-      <h2 class="title"> Vårt Kaffe</h2>
       <article class="intro">
         Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio,
         grounds dripper, crema, strong whipped, variety extra iced id lungo half
@@ -49,5 +49,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>

@@ -130,7 +130,7 @@ export default new Vuex.Store({
       let user = JSON.parse(sessionStorage.getItem("airbean"));
       console.log("User in myHistory sessionStorage", user);
       let data = await ax.get(`${ctx.state.url}/me/${user.id}`);
-      console.log(data);
+      console.log("my-History from db/me", data);
       ctx.commit("setUser", data.data);
     },
     async newUser(ctx, newUser) {

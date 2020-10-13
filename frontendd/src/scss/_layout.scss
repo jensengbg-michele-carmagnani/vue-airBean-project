@@ -70,31 +70,36 @@ body {
       background-size: cover cover;
       background-repeat: no-repeat;
       background-color: $primary-color;
-      .aboutText {
-        margin: 4rem 0 0 0;
-        width: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
+
       .title {
         margin-bottom: 1.2rem;
       }
 
-      .intro {
-        font-weight: 800;
+      .aboutText {
+        margin: 4rem 0 0 0;
+        width: 350px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: scroll;
+        .intro {
+          font-weight: 800;
+        }
+        .center {
+          margin-top: 1.2rem;
+        }
+        .bottom {
+          margin-top: 1.2rem;
+        }
+
+        #imgEva {
+          margin-top: 1rem;
+          border-radius: 9999rem;
+        }
       }
-      .center {
-        margin-top: 1.2rem;
-      }
-      .bottom {
-        margin-top: 1.2rem;
-      }
-      #imgEva {
-        margin-top: 1rem;
-        border-radius: 9999rem;
-      }
+
       .btn-wrapper {
         position: relative;
 
@@ -372,7 +377,7 @@ body {
       }
       .profile-wrapper {
         height: 75%;
-        width: 380px;
+        width: 340px;
 
         #info-profile {
           color: #ffffff;
